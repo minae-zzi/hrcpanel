@@ -1,0 +1,158 @@
+<div class="flex w-full bg-white rounded-xl rounded-t-none p-8">
+  <form class="w-full">
+    <label for="path" class="block text-base pb-2 font-medium text-gray-950"
+      >가입경로</label
+    >
+    <select
+      id="path"
+      name="path"
+      class="block w-full p-3 bg-gray-100 rounded-lg"
+    >
+      <option value="">가입경로를 선택해 주세요.</option>
+      <option value="online">온라인</option>
+      <option value="offline">오프라인</option>
+    </select>
+
+    <div class="flex gap-2 lg:flex-row flex-col">
+      <div
+        class="w-full grid grid-cols-1 gap-y-4 lg:w-1/2 lg:grid-cols-3 lg:gap-4 pt-4"
+      >
+        <!-- 가입일자 -->
+        <div class="col-span-2">
+          <label
+            for="start_date"
+            class="block text-base font-medium text-gray-950 mb-2"
+            >가입일자</label
+          >
+          <div class="flex w-full justify-between items-center gap-2">
+            <input
+              id="start_date"
+              name="start_date"
+              type="date"
+              class="w-[48%] bg-gray-100 rounded-lg p-3"
+            />
+
+            <span class="text-gray-700 font-medium">~</span>
+
+            <label for="end_date" class="sr-only">가입일자 종료</label>
+            <input
+              id="end_date"
+              name="end_date"
+              type="date"
+              class="w-[48%] bg-gray-100 rounded-lg p-3"
+            />
+          </div>
+        </div>
+
+        <!-- keyvalue -->
+        <div>
+          <label
+            for="keyvalue"
+            class="block text-base pb-2 font-medium text-gray-950"
+            >Key value</label
+          >
+          <input
+            id="phone"
+            name="phone"
+            type="text"
+            class="block p-3 bg-gray-100 rounded-lg w-full"
+          />
+        </div>
+      </div>
+
+      <div
+        class="w-full grid grid-cols-1 gap-y-4 lg:w-1/2 lg:grid-cols-7 lg:gap-4 lg:pt-4"
+      >
+        <!-- 실적체크요청 -->
+
+        <div class="col-span-4 flex pt-2 lg:gap-4 lg:pt-7 justify-around">
+          <!-- 체크박스 1 -->
+          <label class="flex items-center space-x-2 cursor-pointer">
+            <input
+              type="checkbox"
+              class="form-checkbox h-5 w-5 text-black rounded border-gray-300 focus:ring-0 focus:outline-none"
+              checked
+            />
+            <span class="text-sm font-medium text-black">실적이상없음</span>
+          </label>
+
+          <!-- 체크박스 2 -->
+          <label class="flex items-center space-x-2 cursor-pointer">
+            <input
+              type="checkbox"
+              class="form-checkbox h-5 w-5 text-black border-gray-300 focus:ring-0 focus:outline-none"
+              checked
+            />
+            <span class="text-sm font-medium text-black">실적체크요청</span>
+          </label>
+
+          <!-- 체크박스 3 -->
+          <label class="flex items-center space-x-2 cursor-pointer">
+            <input
+              type="checkbox"
+              class="form-checkbox h-5 w-5 text-black rounded border-gray-300 focus:ring-0 focus:outline-none"
+            />
+            <span class="text-sm font-medium text-black">실적재전송완료</span>
+          </label>
+        </div>
+
+        <!-- 버튼 -->
+        <div class="col-span-3 flex justify-end gap-2 lg:pt-8">
+          <button
+            type="submit"
+            class="text-white rounded-lg bg-mcolor p-3 w-full"
+            value="검색"
+          >
+            검색하기
+          </button>
+
+          <button
+            type="submit"
+            class="text-white rounded-lg bg-pcolor p-3 w-full"
+            value="검색"
+          >
+            엑셀다운로드
+          </button>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>
+
+<div class="flex flex-col pt-10">
+  <h2 class="text-2xl pb-4 font-bold">실적 데이터 검색</h2>
+
+  <div class="overflow-x-auto">
+    <table
+      id="data-table"
+      class="border-t-2 border-t-mcolor text-center [&_th]:p-4 [&_td]:p-4"
+    >
+      <thead class="bg-white border-b border-b-gray-200">
+        <tr>
+          <th>ID</th>
+          <th>회사명</th>
+          <th>가입경로</th>
+          <th>가입구분</th>
+          <th>유니크ID</th>
+          <th>가입일자</th>
+          <th>실적체크요청</th>
+        </tr>
+      </thead>
+      <tbody
+        id="table-body"
+        class="text-gray-500 bg-none [&_td]:border-b border-b-gray-200"
+      >
+        <!-- 데이터가 JavaScript에 의해 렌더링됩니다 -->
+      </tbody>
+    </table>
+  </div>
+  <div class="flex justify-center space-x-2 mt-4">
+    <button id="prev" class="pagination-btn disabled" disabled>
+      <img src="/images/cal_prev.png" />
+    </button>
+    <div id="pagination" class="flex space-x-2 text-sm text-gray-500"></div>
+    <button id="next" class="pagination-btn">
+      <img src="/images/cal_next.png" />
+    </button>
+  </div>
+</div>

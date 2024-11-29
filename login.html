@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="한국리서치 패널모집광고 관리자 페이지" />
+    <meta name="author" content="한국리서치" />
+    <meta name="keywords" content="한국리서치,패널모집" />
+    <title>한국리서치 패널모집광고 관리자 페이지</title>
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="js/config.js"></script>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css" />
+
+    <!-- Pretendard Font -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/pretendard/dist/web/static/pretendard.css"
+    />
+  </head>
+  <body id="wrap" class="flex flex-col items-center">
+    <h1 class="p-16">
+      <img src="images/logo.png" alt="한국리서치" />
+    </h1>
+    <h2 class="text-6xl text-mcolor text-center font-extrabold">
+      관리자 로그인
+      <p class="text-lg text-slate-600 font-medium pt-2 pb-10">
+        한국리서치 광고사 관리자 사이트
+      </p>
+    </h2>
+    <div
+      id="login"
+      class="flex flex-col w-4/5 md:w-[485px] bg-white rounded-3xl shadow-xl items-center h-auto p-6 md:p-8"
+    >
+      <form class="flex flex-col gap-2 w-full" action="panel.html">
+        <p>
+          <input
+            type="text"
+            placeholder="아이디"
+            class="w-full text-gray-800 text-base rounded-xl bg-gray-100 p-3"
+          />
+        </p>
+        <p>
+          <input
+            type="password"
+            placeholder="비밀번호"
+            class="w-full text-gray-800 text-base rounded-xl bg-gray-100 p-3"
+          />
+        </p>
+        <button
+          type="submit"
+          value="로그인"
+          class="bg-mcolor text-white font-bold text-xl p-5 rounded-xl"
+        >
+          로그인
+        </button>
+      </form>
+    </div>
+  </body>
+</html>
